@@ -33,6 +33,7 @@ const ProgressBar = ({ value, size }) => {
     aria-valuenow={value}
   >
     <Bar value={value} rightCorners={rightCorners} />
+    <VisuallyHidden>{value}%</VisuallyHidden>
   </Wrapper>;
 };
 
