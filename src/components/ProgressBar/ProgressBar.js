@@ -29,6 +29,8 @@ const ProgressBar = ({ value, size }) => {
     w={wrapperWidth}
     h={height}
     padding={padding}
+    role="progressbar"
+    aria-valuenow={value}
   >
     <Bar value={value} rightCorners={rightCorners} />
   </Wrapper>;
