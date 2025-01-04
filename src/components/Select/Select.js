@@ -9,10 +9,48 @@ const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
-    <select value={value} onChange={onChange}>
-      {children}
-    </select>
+    <Wrapper>
+      {displayedValue}
+      <TriggerIcon id="chevron-down" strokeWidth={2} size={24} />
+      <SelectInput value={value} onChange={onChange}>
+        {children}
+      </SelectInput>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  appearance: none;
+  position: relative;
+  background-color: ${COLORS.transparentGray15};
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: ${COLORS.gray700};
+  border: none;
+  width: max-content;
+  
+  &:hover {
+    color: black;
+  }
+  
+  &:focus-within {
+    outline: blue;
+  }
+`
+
+const TriggerIcon = styled(Icon)`
+  display: inline-block;
+  margin-left: 1.5em;
+  margin-bottom: -0.4em;
+`
+
+const SelectInput = styled.select`
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+`
 
 export default Select;
