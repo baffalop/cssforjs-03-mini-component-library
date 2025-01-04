@@ -25,6 +25,7 @@ const Wrapper = styled.div`
   background-color: ${COLORS.transparentGray15};
   border-radius: 8px;
   padding: 12px 16px;
+  padding-right: 64px;
   font-family: Roboto, sans-serif;
   font-size: 1rem;
   line-height: 1.2;
@@ -42,9 +43,11 @@ const Wrapper = styled.div`
 `
 
 const TriggerIcon = styled(Icon)`
-  display: inline-block;
-  margin-left: 1.5em;
-  margin-bottom: -0.4em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 16px;
+  margin: auto 0;
 `
 
 const SelectInput = styled.select`
