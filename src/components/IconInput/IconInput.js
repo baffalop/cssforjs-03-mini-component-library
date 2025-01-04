@@ -23,6 +23,11 @@ const IconInput = ({
 const Wrapper = styled.label`
   position: relative;
   width: ${p => p.w}px;
+  color: ${COLORS.gray700};
+
+  &:hover {
+    color: black;
+  }
 `
 
 const Input = styled.input`
@@ -34,16 +39,12 @@ const Input = styled.input`
   
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  color: ${COLORS.gray700};
-  
+  color: inherit;
+
   &:focus {
     outline-offset: 2px;
   }
-  
-  &:hover {
-    color: black;
-  }
-  
+
   ::-webkit-input-placeholder {
     font-weight: 400;
     color: ${COLORS.gray500};
