@@ -20,7 +20,6 @@ const Select = ({ label, value, onChange, children }) => {
 };
 
 const Wrapper = styled.div`
-  appearance: none;
   position: relative;
   background-color: ${COLORS.transparentGray15};
   border-radius: 8px;
@@ -51,6 +50,7 @@ const TriggerIcon = styled(Icon)`
 `
 
 const SelectInput = styled.select`
+  appearance: none;
   position: absolute;
   opacity: 0;
   inset: 0;
