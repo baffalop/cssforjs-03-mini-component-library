@@ -13,12 +13,34 @@ const IconInput = ({
   size,
   placeholder,
 }) => {
+  const design = designs[size]
+
   return <Wrapper w={width}>
     <VisuallyHidden>{label}</VisuallyHidden>
-    <Input placeholder={placeholder} />
-    <InputIcon id={icon} size={16} />
+    <Input
+      placeholder={placeholder}
+      padding={design.padding}
+      fontSize={design.fontSize}
+      border={design.border}
+    />
+    <InputIcon id={icon} size={design.iconSize} />
   </Wrapper>;
 };
+
+const designs = {
+  small: {
+    iconSize: 16,
+    fontSize: '0.875rem',
+    padding: '4px 8px 4px 24px',
+    border: 1,
+  },
+  large: {
+    iconSize: 24,
+    fontSize: '1rem',
+    padding: '8px 12px 7px 36px',
+    border: 2,
+  },
+}
 
 const Wrapper = styled.label`
   position: relative;
@@ -33,12 +55,12 @@ const Wrapper = styled.label`
 const Input = styled.input`
   appearance: none;
   border: none;
-  border-bottom: 1px solid black;
-  padding: 4px 8px;
-  padding-left: 24px;
+  border-bottom: ${p => p.border}px solid black;
+  padding: ${p => p.padding};
   
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
+  font-size: ${p => p.fontSize};
   color: inherit;
 
   &:focus {
