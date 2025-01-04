@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   }
   
   &:focus-within {
-    outline: blue;
+    outline: 2px solid -webkit-focus-ring-color;
   }
 `
 
